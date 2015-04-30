@@ -32,8 +32,7 @@ function! WordCount(...)
   if a:0 == 0
     return s:WordCountStr
   elseif a:0 == 2 && a:2 < s:FileSizeKB
-          return s:WordCountStr
-      endif
+    return s:WordCountStr
   endif
   " g<c-g>の何番目の要素を読むか
   let cidx = 3
