@@ -26,12 +26,8 @@ augroup END
 let s:WordCountStr = ''
 let s:WordCountDict = {'word': 2, 'char': 3, 'byte': 4}
 let s:VisualWordCountDict = {'word': 1, 'char': 2, 'byte': 3}
-let s:FileSize = getfsize(expand("%:p"))
-if s:FileSize > 1024
-    let s:FileSize = s:FileSize / 1024
-else
-    let s:FileSize = 0
-endif
+let s:FileSize = getfsize(expand("%:p")) / 1024
+
 function! WordCount(...)
   if a:0 == 0
     return s:WordCountStr
