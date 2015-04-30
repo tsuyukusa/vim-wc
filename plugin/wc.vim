@@ -20,7 +20,7 @@ scriptencoding=utf-8
 
 augroup WordCount
   autocmd!
-  autocmd BufWinEnter,CursorHold,CursorMoved * call WordCount('char',33)
+  autocmd BufWinEnter,CursorHold,CursorMoved * call WordCount('char',1000)
 augroup END
 
 let s:WordCountStr = ''
