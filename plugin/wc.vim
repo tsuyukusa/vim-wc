@@ -20,13 +20,19 @@ scriptencoding=utf-8
 
 augroup WordCount
   autocmd!
-  autocmd BufWinEnter,CursorHold,CursorMoved * call WordCount('char',30)
+  autocmd BufWinEnter,CursorHold,CursorMoved * call WordCount('char',33)
 augroup END
 
 let s:WordCountStr = ''
 let s:WordCountDict = {'word': 2, 'char': 3, 'byte': 4}
 let s:VisualWordCountDict = {'word': 1, 'char': 2, 'byte': 3}
-let s:FileSize = FileSize()
+let s:FileSize = getfsize(expand("%:p"))
+if s:FileSize > 1024
+    s:FileSize = s:FileSize / 1024
+else
+    s:FileSize = 0
+endif
+endif
 function! WordCount(...)
   if a:0 == 0
     return s:WordCountStr
