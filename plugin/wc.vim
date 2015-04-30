@@ -28,9 +28,9 @@ let s:WordCountDict = {'word': 2, 'char': 3, 'byte': 4}
 let s:VisualWordCountDict = {'word': 1, 'char': 2, 'byte': 3}
 let s:FileSize = getfsize(expand("%:p"))
 if s:FileSize > 1024
-    s:FileSize = s:FileSize / 1024
+    let s:FileSize = s:FileSize / 1024
 else
-    s:FileSize = 0
+    let s:FileSize = 0
 endif
 endif
 function! WordCount(...)
