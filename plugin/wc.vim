@@ -31,8 +31,7 @@ let s:FileSizeKB = getfsize(expand("%:p")) / 1024
 function! WordCount(...)
   if a:0 == 0
     return s:WordCountStr
-  elseif a:0 == 2 && mode() == 'n'
-      if a:2 < s:FileSizeKB
+  elseif a:0 == 2 && a:2 < s:FileSizeKB
           return s:WordCountStr
       endif
   endif
