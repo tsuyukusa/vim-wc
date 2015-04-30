@@ -32,7 +32,6 @@ if s:FileSize > 1024
 else
     let s:FileSize = 0
 endif
-endif
 function! WordCount(...)
   if a:0 == 0
     return s:WordCountStr
